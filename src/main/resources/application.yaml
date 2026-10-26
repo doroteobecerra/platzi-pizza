@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: platzi-pizza
+  datasource:
+    url: jdbc:postgresql://localhost:5432/platzi_pizza
+    username: postgres
+    password: tu_contraseña
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
