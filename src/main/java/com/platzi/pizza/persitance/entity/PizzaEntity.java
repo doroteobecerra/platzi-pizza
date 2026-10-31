@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "pizza")
 @Getter
@@ -22,16 +24,16 @@ public class PizzaEntity {
     @Column(nullable = false, length = 150)
     private String description;
 
-    @Column(nullable = false, columnDefinition = "Decimal(5,2)")
-    private Double price;
+    @Column(nullable = false, precision = 5, scale = 2)
+    private BigDecimal price;
 
-    @Column(columnDefinition = "TINYINT")
+    @Column
     private Boolean vegetarian;
 
-    @Column(columnDefinition = "TINYINT")
+    @Column
     private Boolean vegan;
 
-    @Column(columnDefinition = "TINYINT", nullable = false)
+    @Column(nullable = false)
     private Boolean available;
 
 }
