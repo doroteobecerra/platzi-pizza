@@ -2,8 +2,7 @@ package com.platzi.pizza.service;
 
 import com.platzi.pizza.persitance.entity.PizzaEntity;
 import com.platzi.pizza.persitance.repository.PizzaRepository;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,5 +26,13 @@ public class PizzaService {
 
     public PizzaEntity save(PizzaEntity pizzaEntity){
         return this.pizzaRepository.save(pizzaEntity);
+    }
+
+    public boolean exists(int idPizza){
+        return this.pizzaRepository.existsById(idPizza);
+    }
+
+    public void deleted(int idPizza){
+        this.pizzaRepository.deleteById(idPizza);
     }
 }
